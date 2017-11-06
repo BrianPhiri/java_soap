@@ -3,10 +3,12 @@ package com.brianphiri.soap_server;
 import localhost._8080.webservice.GetCountryRequest;
 import localhost._8080.webservice.GetCountryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+@Endpoint
 public class CountryEndpoint {
     private static final String NAMESPACE_URL = "http://localhost:8080/webservice";
 

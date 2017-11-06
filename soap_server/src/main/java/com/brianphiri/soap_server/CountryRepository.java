@@ -16,10 +16,12 @@ public class CountryRepository {
     @PostConstruct
     public void initData(){
         Country kenya = new Country();
-        kenya.setName("Kenay");
+        kenya.setName("Kenya");
         kenya.setCapital("Nairobi");
         kenya.setCurrency(Currency.KES);
         kenya.setPopulation(46704314);
+
+        countries.put(kenya.getName(), kenya);
 
         Country zambia = new Country();
         zambia.setName("Zambia");
@@ -27,19 +29,19 @@ public class CountryRepository {
         zambia.setCurrency(Currency.ZMW);
         zambia.setPopulation(2000010);
 
+        countries.put(kenya.getName(), zambia);
+
         Country def = new Country();
         def.setName("Empty");
         def.setCapital("Blank");
         def.setCurrency(Currency.BZD);
         def.setPopulation(0);
 
-        countries.put(kenya.getName(), kenya);
-        countries.put(kenya.getName(), zambia);
         countries.put(kenya.getName(), def);
     }
 
     public Country findCountry(String name){
-        Assert.notEmpty(new String[]{name}, "This country is null");
+        Assert.notEmpty(new String[]{name},"This country must not be null");
         return countries.get(name);
     }
 }
