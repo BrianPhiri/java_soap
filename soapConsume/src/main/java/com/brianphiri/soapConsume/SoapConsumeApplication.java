@@ -18,7 +18,7 @@ public class SoapConsumeApplication {
 	@Bean
 	CommandLineRunner lookup(CountryClient countryClient){
 		return args -> {
-			String name = "def";
+			String name = "Kenya";
 			if (args.length > 0){
 				name = args[0];
 			}
