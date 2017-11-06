@@ -29,7 +29,7 @@ public class CountryRepository {
         zambia.setCurrency(Currency.ZMW);
         zambia.setPopulation(2000010);
 
-        countries.put(kenya.getName(), zambia);
+        countries.put(zambia.getName(), zambia);
 
         Country def = new Country();
         def.setName("Empty");
@@ -37,7 +37,7 @@ public class CountryRepository {
         def.setCurrency(Currency.BZD);
         def.setPopulation(0);
 
-        countries.put(kenya.getName(), def);
+        countries.put(def.getName(), def);
     }
 
     public Country findCountry(String name){
